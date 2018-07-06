@@ -1,0 +1,25 @@
+server:
+  port: 8764
+spring:
+  application:
+    name: product
+  datasource:
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/springcloud?characterEncoding=utf8&useSSL=true
+    username: root
+    password: gsgogo123
+    driverClassName: net.sf.log4jdbc.DriverSpy
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
